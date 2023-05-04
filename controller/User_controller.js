@@ -28,7 +28,7 @@ const signUp = (req, res) => {
                     message:'SignUp successfull'
                 })
             }).catch((error)=>{
-                res.json({message:`an error${error}`})
+                res.json({status:0,message:`an error${error}`})
             })
         }
     })
@@ -48,7 +48,7 @@ await User.findOne({email:req.body.email}).then((login)=>{
                 res.json({status:1,message:"Login sucessfull",token})
                 
             }else{
-                res.json({message:'check email & password'})
+                res.json({status:0,message:'check email & password'})
             }
         })
     }else{

@@ -19,6 +19,7 @@ const authorization =async(req,res,next)=>{
             }
            }else{
             res.json({
+                status:0,
                 message:"user not found"
             })
            }
@@ -26,6 +27,7 @@ const authorization =async(req,res,next)=>{
         }
     }else{
         res.json({
+            status:0,
             message:"UnAuthorized"
         })
     }
