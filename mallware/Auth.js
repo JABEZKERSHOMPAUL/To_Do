@@ -33,7 +33,7 @@ const authorization =async(req,res,next)=>{
     }
 }
 
-const verifyUser = async (req, res, next) => {
+const verifyUser = async (req, res) => {
     if (req.body.token) {
         let decode = jwt.verify(req.body.token, 'key8088')
         if (decode) {
