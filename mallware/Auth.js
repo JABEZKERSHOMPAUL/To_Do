@@ -11,7 +11,7 @@ const authorization =async(req,res,next)=>{
             let user=await User.findOne({_id:req.userId})
             
             if(user!==null){
-                next()
+                next();
             }else{
                 res.json({
                     message:"unauthorized"

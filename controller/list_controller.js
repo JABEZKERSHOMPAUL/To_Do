@@ -7,7 +7,7 @@ const createTodo = async (req, res) => {
             createdBy:req.userId,
         })
         const createTodo = await Todo.save();
-        console.log(createTodo);
+       
         if (createTodo) {
             res.json({ message: 'Created' })
         }
