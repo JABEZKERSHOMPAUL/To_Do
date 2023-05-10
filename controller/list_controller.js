@@ -6,7 +6,7 @@ const createTodo = async (req, res) => {
             todo: req.body.todo,
             createdBy:req.userId,
         })
-        const createTodo = await Todo.save();
+        const createTodo = await todo.save();
        
         if (createTodo) {
             res.json({ message: 'Created' })
