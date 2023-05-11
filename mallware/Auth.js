@@ -34,6 +34,7 @@ const authorization =async(req,res,next)=>{
 }
 
 const verifyUser = async (req, res) => {
+   try {
     if (req.body.token) {
         let decode = jwt.verify(req.body.token, 'key8088')
         if (decode) {
@@ -66,6 +67,10 @@ const verifyUser = async (req, res) => {
             message: "UnAuthorized"
         })
     }
+   } catch (error) {
+    console.log(error)
+    
+   }
 }
 
 module.exports = {  authorization,verifyUser };
